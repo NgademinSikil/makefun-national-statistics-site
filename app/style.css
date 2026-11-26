@@ -1,0 +1,241 @@
+/* Angka Indonesia — gaya orisinal: hijau pinus dalam, aksen kunyit, kertas hangat.
+   Satu stylesheet untuk seluruh situs; layout ponsel di bawah 720px. */
+
+:root {
+  --tinta: #173f3f;
+  --tinta-lembut: #5d7373;
+  --teal: #0f766e;
+  --teal-gelap: #0b4f4a;
+  --kunyit: #d97706;
+  --kertas: #f7f5ef;
+  --kartu: #ffffff;
+  --garis: #dbe4e2;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--kertas);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: var(--teal); }
+
+/* Header */
+header.bar {
+  background: var(--teal-gelap);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.bar-dalam {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.logo em { font-style: normal; color: #fbbf24; }
+
+nav.menu { display: flex; gap: 4px; flex-wrap: wrap; }
+
+.nav-link {
+  color: #d7e8e5;
+  text-decoration: none;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.nav-link:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.nav-link.aktif { background: #fbbf24; color: #173f3f; font-weight: 700; }
+
+/* Isi */
+main#view {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+h1 { font-size: 34px; line-height: 1.15; margin: 6px 0 10px; }
+h2 { font-size: 21px; margin: 0 0 10px; }
+.lede { font-size: 18px; color: #33504f; max-width: 720px; }
+
+.hero { padding: 18px 0 8px; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--kunyit);
+  margin: 0 0 8px;
+}
+.hero h1 { font-size: 44px; max-width: 640px; }
+.hero h1 span { color: var(--teal); }
+.hero-cta { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 6px; }
+
+.btn {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: 999px;
+}
+.btn.ghost { background: transparent; color: var(--teal); box-shadow: inset 0 0 0 2px var(--teal); }
+
+/* Kartu angka */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 22px 0;
+}
+.kpi {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 0;
+}
+.kpi-label { margin: 0 0 4px; font-size: 13px; color: var(--tinta-lembut); font-weight: 600; }
+.kpi-angka { margin: 0; font-size: 34px; font-weight: 800; line-height: 1.1; color: var(--teal-gelap); }
+.kpi-satuan { font-size: 15px; font-weight: 600; color: var(--tinta-lembut); }
+.kpi-ket { margin: 6px 0 0; font-size: 13px; color: var(--tinta-lembut); }
+
+/* Panel */
+.panel {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin: 18px 0;
+}
+.panel p { max-width: 760px; }
+.sumber { font-size: 13px; color: var(--tinta-lembut); margin: 10px 0 0; }
+.ket { font-size: 13px; color: var(--tinta-lembut); }
+
+canvas { display: block; width: 100%; }
+
+/* Menu topik */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.menu-kartu {
+  display: block;
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--tinta);
+  background: #fbfaf6;
+}
+.menu-kartu:hover { border-color: var(--teal); }
+.menu-kartu strong { display: block; font-size: 17px; color: var(--teal-gelap); margin-bottom: 4px; }
+.menu-kartu span { font-size: 14px; color: var(--tinta-lembut); }
+
+/* Tab */
+.tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+.tab {
+  border: 1px solid var(--garis);
+  background: #fbfaf6;
+  color: var(--tinta);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tab.aktif { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* Tabel */
+.tabel-wrap { overflow-x: auto; }
+table.tabel { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tabel th, .tabel td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--garis); }
+.tabel th { cursor: pointer; white-space: nowrap; color: var(--teal-gelap); background: #f2f6f5; }
+.tabel th:hover { background: #e6efed; }
+.tabel td:nth-child(n+2) { font-variant-numeric: tabular-nums; }
+.panah { color: var(--kunyit); }
+
+/* Cari + daftar provinsi */
+.cari-label { display: block; font-weight: 700; margin-bottom: 6px; }
+.cari {
+  width: 100%;
+  max-width: 460px;
+  padding: 11px 14px;
+  font-size: 15px;
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  font-family: inherit;
+}
+.cari:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+.hasil-cari { font-size: 14px; color: var(--tinta-lembut); margin: 8px 0 0; min-height: 20px; }
+
+.daftar-provinsi {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.daftar-provinsi li {
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fbfaf6;
+}
+.daftar-provinsi strong { display: block; font-size: 14px; }
+.daftar-provinsi span { font-size: 13px; color: var(--tinta-lembut); }
+
+.sumber-list { margin: 0; padding-left: 20px; }
+.sumber-list li { margin-bottom: 12px; }
+
+/* Footer */
+footer.kaki {
+  border-top: 1px solid var(--garis);
+  background: #eef2f1;
+}
+.kaki-dalam {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 22px 20px;
+  font-size: 13px;
+  color: var(--tinta-lembut);
+}
+.kaki-dalam p { margin: 4px 0; }
+
+/* Ponsel */
+@media (max-width: 720px) {
+  .hero h1 { font-size: 32px; }
+  h1 { font-size: 28px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-angka { font-size: 26px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .daftar-provinsi { grid-template-columns: repeat(2, 1fr); }
+  .panel { padding: 16px; }
+  .bar-dalam { gap: 8px; }
+  nav.menu { gap: 2px; }
+  .nav-link { padding: 6px 9px; font-size: 13px; }
+}
